@@ -6,13 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Curious Gadgets on Amazon</title>
     <style>
+        /* Background with 30-60-90 Color Rule */
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background: linear-gradient(135deg, #FF6F61 30%, #FFB84D 60%, #FFD700 90%); /* Primary, secondary, and accent colors */
             margin: 0;
             padding: 0;
             text-align: center;
         }
+
         header {
             background-color: #333;
             color: white;
@@ -26,15 +28,33 @@
             margin-top: 40px;
             text-align: center;
         }
-        .iphone-section img {
-            width: 300px;
+        .iphone-image-box {
+            width: 100%; /* Set to 100% to fill the screen */
+            max-width: 100%;
+            padding: 20px;
+            background-color: #fff;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .iphone-image-box img {
+            width: 100%;  /* Make images fill the width of the container */
             height: auto;
             border-radius: 8px;
+            display: none;
         }
         .iphone-title {
             font-size: 20px;
             margin-top: 10px;
             color: #333;
+        }
+        .iphone-specs {
+            text-align: left;
+            color: #333;
+            margin-top: 20px;
+            font-size: 16px;
         }
         .buy-now-btn {
             background-color: #ff9900;
@@ -45,16 +65,14 @@
             display: inline-block;
             margin-top: 10px;
         }
-        .apple-info {
-            margin-top: 40px;
-            padding: 20px;
-            text-align: left;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            width: 80%;
-            margin-left: 10%;
-            margin-right: 10%;
+        .next-page-btn {
+            background-color: #4CAF50;
+            padding: 10px 20px;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 20px;
         }
         footer {
             background-color: #333;
@@ -64,6 +82,27 @@
             bottom: 0;
             width: 100%;
             text-align: center;
+        }
+        /* Slideshow CSS */
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+        .slides {
+            display: block;
+            width: 100%; /* Ensure slides take up 100% width */
+            height: auto;
+        }
+        .fade {
+            animation: fade 1.5s ease-in-out infinite;
+        }
+        @keyframes fade {
+            0% { opacity: 0; }
+            20% { opacity: 1; }
+            40% { opacity: 1; }
+            60% { opacity: 0; }
+            100% { opacity: 0; }
         }
     </style>
 </head>
@@ -76,33 +115,67 @@
 
     <!-- iPhone 16 Pro Max Section -->
     <div class="iphone-section">
-        <img src="https://amzn.in/d/1INh8LG" alt="iPhone 16 Pro Max">
+        <div class="iphone-image-box">
+            <!-- Slideshow Container -->
+            <div class="slideshow-container">
+                <!-- 6 Images for the Slideshow -->
+                <img class="slides fade" src="./assets/ihpone 16 pro max/61+0gHhq1rL._SL1500_.jpg" alt="iPhone Image 1">
+                <img class="slides fade" src="./assets/ihpone 16 pro max/61giwQtR1qL._SX679_.jpg" alt="iPhone Image 2">
+                <img class="slides fade" src="./assets/ihpone 16 pro max/61PaO55e2GL._SL1500_.jpg" alt="iPhone Image 3">
+                <img class="slides fade" src="./assets/ihpone 16 pro max/710SV4EG9SL._SL1500_.jpg" alt="iPhone Image 4">
+                <img class="slides fade" src="./assets/ihpone 16 pro max/71ta3jyFvIL._SL1500_.jpg" alt="iPhone Image 5">
+                <img class="slides fade" src="./assets/ihpone 16 pro max/81KoYONBafL._SL1500_.jpg" alt="iPhone Image 6">
+            </div>
+        </div>
         <div class="iphone-title">
             iPhone 16 Pro Max 256 GB: 5G Mobile Phone with Camera Control, 4K 120 fps Dolby Vision and a Huge Leap in Battery Life. Works with AirPods; Desert Titanium
         </div>
+
+        <!-- iPhone Specifications -->
+        <div class="iphone-specs">
+            <h3>Key Features & Specifications:</h3>
+            <ul>
+                <li><strong>Display:</strong> 6.7-inch OLED Super Retina XDR display</li>
+                <li><strong>Processor:</strong> A17 Bionic chip for ultra-fast performance</li>
+                <li><strong>Camera:</strong> Triple 48 MP Pro camera system with 5x optical zoom</li>
+                <li><strong>Battery Life:</strong> Up to 28 hours of video playback</li>
+                <li><strong>Storage:</strong> Available in 128 GB, 256 GB, and 512 GB variants</li>
+                <li><strong>5G Connectivity:</strong> Ultra-fast 5G speeds</li>
+                <li><strong>Operating System:</strong> iOS 17 with new privacy features</li>
+                <li><strong>Color:</strong> Desert Titanium</li>
+                <li><strong>Other Features:</strong> Face ID, IP68 water resistance, MagSafe support, and more!</li>
+            </ul>
+        </div>
+
+        <!-- First Buy Now Button (below slideshow) -->
         <a href="https://amzn.to/4gIxtKD" target="_blank" class="buy-now-btn">Buy Now</a>
-    </div>
 
-    <!-- Apple Products Information Section -->
-    <div class="apple-info">
-        <h2>Why Apple Products Stand Out</h2>
-        <p>Apple products are renowned for their exceptional quality, innovative design, and seamless integration across devices. With a rich history of revolutionizing industries, Apple has consistently set the standard for consumer technology. From the iconic iPhone to the powerful MacBooks, Apple products are built with precision, cutting-edge features, and premium materials.</p>
+        <!-- Second Buy Now Button (below product description) -->
+        <a href="https://amzn.to/3DNkj0o" target="_blank" class="buy-now-btn">Buy Now</a>
 
-        <p>The <strong>iPhone</strong>, for instance, continues to push boundaries with its sleek design, advanced camera systems, and powerful performance. The latest models, such as the <strong>iPhone 16 Pro Max</strong>, showcase Apple's commitment to delivering state-of-the-art technology. With features like 5G support, a stunning <strong>4K 120fps Dolby Vision</strong> camera, and an impressive leap in battery life, the iPhone 16 Pro Max is designed to provide users with an unmatched mobile experience. The addition of <strong>Camera Control</strong> and <strong>AirPods</strong> compatibility further elevates the user experience, offering greater connectivity and enhanced usability.</p>
-
-        <p><strong>MacBooks</strong> have also seen significant upgrades with the introduction of <strong>M1</strong> and <strong>M2</strong> chips, offering unprecedented performance and efficiency. Apple's custom silicon has transformed the MacBook Air and MacBook Pro into powerful machines capable of handling even the most demanding tasks with ease, all while boasting longer battery life.</p>
-
-        <p><strong>Apple Watches</strong> have evolved with advanced health tracking features like ECG, blood oxygen monitoring, and fitness tracking, making them a must-have for those who prioritize their well-being.</p>
-
-        <p>Apple's <strong>iPad</strong> lineup continues to innovate as well, with models that serve both casual users and professionals. The <strong>iPad Pro</strong> is now powered by the M2 chip, making it even faster and more versatile, ideal for creative professionals, designers, and content creators.</p>
-
-        <p>With each new release, Apple consistently demonstrates its commitment to improving its products. Regular software updates bring new functionalities and enhance the overall experience, ensuring that Apple users enjoy a continually evolving ecosystem. The combination of cutting-edge hardware and seamless software integration creates an ecosystem that is truly unique, offering an unparalleled user experience.</p>
-
-        <p>Whether you're upgrading your iPhone, exploring the power of a new MacBook, or discovering the future of wearable tech with the Apple Watch, Apple products stand at the forefront of technological innovation, continuously shaping the future of personal tech.</p>
+        <!-- Next Page Button -->
+        <a href="nextpage.html" class="next-page-btn">Next Page</a>
     </div>
 
     <footer>
-        © 2025 Curious Gadgets | Powered by Good Product Finder
+        © 2025 Curious Gadgets | Powered by findonline
     </footer>
+
+    <script>
+        // JavaScript for the image slideshow
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.slides');
+        
+        function showSlides() {
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            slides[slideIndex-1].style.display = "block";  
+            setTimeout(showSlides, 2000); // Change image every 2 seconds
+        }
+        showSlides();  // Initial call to start slideshow
+    </script>
 </body>
 </html>
